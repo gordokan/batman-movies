@@ -32,10 +32,13 @@ export const movieComponent = {
       <div class="movie-details-container">
         <h3>{{$ctrl.movieData.title}}</h3>
         <div class="movie-details">
+          <div class="movie-details-rating">{{$ctrl.movieData.rating}}</div>
+          <div class="movie-details-runTime">{{$ctrl.movieData.runTime}}</div>
+          <div class="movie-details-released">{{$ctrl.movieData.released}}</div>
         </div>
-        <div class="movie-description">{{$ctrl.movieData.description}}</div>
+        <div class="movie-plot">{{$ctrl.movieData.plot}}</div>
       </div>
-      <a href='' target="_blank">View on IMDB</a>
+      <a href="{{$ctrl.movieData.externalLink}}" target="_blank">View on IMDB</a>
     </div>
   `
 };

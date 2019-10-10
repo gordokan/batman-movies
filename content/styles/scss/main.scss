@@ -1,0 +1,10 @@
+.move-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+}

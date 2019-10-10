@@ -1,6 +1,6 @@
 import { moveListComponent } from "./movie-list.component";
 import { movieComponent } from "./movie.component";
-
+import "./../content/styles/scss/main";
 export const dgMovieAppModule = angular.module("dgMovieApp", []);
 dgMovieAppModule.component("movieList", moveListComponent);
 dgMovieAppModule.component("movie", movieComponent);
