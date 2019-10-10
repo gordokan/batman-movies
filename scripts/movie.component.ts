@@ -1,9 +1,10 @@
 import { getMovieById } from "./request.service";
-import { UiMovieModel } from "./models/ui-movie.model";
+import { VerboseUiMovieModel } from "./models/ui-movie.model";
+// import images from "../content/images/*"; // https://github.com/parcel-bundler/parcel/issues/317
 
 class controller {
   public static readonly $inject = ["$scope"];
-  protected movieData: UiMovieModel;
+  protected movieData: VerboseUiMovieModel;
   private $scope;
   constructor($scope) {
     this.$scope = $scope;
@@ -28,7 +29,7 @@ export const movieComponent = {
   controller,
   template: `
     <div class="movie" ng-if="$ctrl.movieData">
-      <img class="movie-image" ng-src=""/>
+      <img class="movie-image" ng-src="{{$ctrl.movieData.posterUrl}}"/>
       <div class="movie-details-container">
         <h3>{{$ctrl.movieData.title}}</h3>
         <div class="movie-details">
