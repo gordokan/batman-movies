@@ -1,3 +1,7 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .move-list {
   display: flex;
   flex-direction: column;
@@ -6,5 +10,64 @@
 .movie {
   display: flex;
   flex-direction: row;
-  border: 1px solid red;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding: 20px;
+  height: 275px;
+  margin-bottom: 20px;
+  background-color: #eeeeee;
+
+  .movie__image {
+    border-radius: 10px;
+    margin-right: 30px;
+    width: 200px;
+  }
+}
+
+.movie__overview-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .movie__title {
+    border-bottom: 1px solid #000000;
+    margin: 0 0 10px 0;
+  }
+
+  .movie__details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .movie__rated {
+      border: 1px solid #808080;
+      padding: 2px 5px;
+      margin-right: 10px;
+      color: gray;
+      border-radius: 5px;
+    }
+
+    .movie__released {
+      margin-left: auto;
+    }
+  }
+
+  .movie__plot {
+    margin-top: 10px;
+  }
+
+  .movie__external-button {
+    cursor: pointer;
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    width: 200px;
+    box-sizing: border-box;
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: auto;
+    margin-left: auto;
+    outline: none;
+  }
 }
