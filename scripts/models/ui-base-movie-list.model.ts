@@ -6,6 +6,7 @@ export class BaseUiMovieModel {
   year: string;
   id: string;
   posterUrl: string;
+  _decade: number; // for easy filtering
 
   constructor(baseApiMovieModel) {
     this.title = baseApiMovieModel.Title;
@@ -13,5 +14,14 @@ export class BaseUiMovieModel {
     this.id = baseApiMovieModel.imdbID;
     const fileName = baseApiMovieModel.Poster.substring(URL_TO_STRIP.length);
     this.posterUrl = images[`${fileName.substring(0, fileName.length - 4)}`];
+    this._decade = this.setDecade(this.year);
+  }
+
+  private setDecade(val: string) {
+    let decade = parseInt(`${val.slice(0, val.length - 1)}0`);
+
+    if (decade && decade !== NaN) {
+      return decade;
+    }
   }
 }
