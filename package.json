@@ -24,5 +24,8 @@
     "sass": "^1.23.0",
     "typescript": "^3.6.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "promise-polyfill": "8.1.3",
+    "whatwg-fetch": "^3.0.0"
+  }
 }

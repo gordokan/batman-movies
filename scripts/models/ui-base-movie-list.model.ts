@@ -18,7 +18,7 @@ export class BaseUiMovieModel {
   }
 
   private setDecade(val: string) {
-    if (val.includes("–")) {
+    if (val.indexOf("–") !== -1) {
       // 1992–1995 edge case
       val = val.split("–")[0];
     }

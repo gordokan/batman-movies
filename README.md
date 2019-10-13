@@ -1,3 +1,16 @@
+# How to run
+
+I am using the Parcel-bundler to bundle the Javascript and Sass files.
+`npm install -g parcel-bundler`
+
+Install the rest of the dependencies
+`npm install`
+
+Run the development build
+`npm run dev`
+
+navigate to http://localhost:1234/
+
 # Front-End Coding Challenge
 
 ## Task
@@ -28,14 +41,3 @@ Take those results and look up details for each movie returned using this api pa
 http://www.omdbapi.com/?i=tt0372784 (where i = the imdb id found above)
 
 Hint: Images will be blocked from hotlinking. Manually download all of those images to the project first, then reference them locally (parse the url string from the response).
-
-# How to run
-
-I am using the Parcel-bundler to bundle the Javascript and Sass files.
-`npm install -g parcel-bundler`
-
-`npm install`
-
-`npm run dev`
-
-navigate to http://localhost:1234/
