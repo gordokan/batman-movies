@@ -24,7 +24,5 @@
     "sass": "^1.23.0",
     "typescript": "^3.6.4"
   },
-  "dependencies": {
-    "angular": "^1.7.8"
-  }
+  "dependencies": {}
 }

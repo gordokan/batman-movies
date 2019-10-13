@@ -2,7 +2,7 @@ import { getMovieById } from "./request.service";
 import { VerboseUiMovieModel } from "./models/ui-movie.model";
 // import images from "../content/images/*"; // https://github.com/parcel-bundler/parcel/issues/317
 
-class controller {
+class MovieController {
   public static readonly $inject = ["$scope", "$window"];
   protected movieData: VerboseUiMovieModel;
   private $scope;
@@ -11,11 +11,11 @@ class controller {
     this.$scope = $scope;
     this.$window = $window;
   }
-  protected $onInit() {
+  public $onInit() {
     // TODO show a loading icon?
   }
 
-  protected $onChanges(changes) {
+  public $onChanges(changes) {
     if (changes && changes.movieId && changes.movieId.currentValue) {
       // TODO complete this check
       getMovieById(changes.movieId.currentValue).then(movie => {
@@ -24,7 +24,7 @@ class controller {
     }
   }
 
-  protected openLink(link: string) {
+  public openLink(link: string) {
     if (!link) return;
 
     this.$window.open(link, "_blank");
@@ -34,7 +34,7 @@ export const movieComponent = {
   bindings: {
     movieId: "<"
   },
-  controller,
+  controller: MovieController,
   template: `
     <div class="movie" ng-if="$ctrl.movieData">
       <img class="movie__image" ng-src="{{$ctrl.movieData.posterUrl}}"/>
