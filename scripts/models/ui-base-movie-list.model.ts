@@ -12,8 +12,7 @@ export class BaseUiMovieModel {
     this.title = baseApiMovieModel.Title;
     this.year = baseApiMovieModel.Year;
     this.id = baseApiMovieModel.imdbID;
-    const fileName = baseApiMovieModel.Poster.substring(URL_TO_STRIP.length);
-    this.posterUrl = images[`${fileName.substring(0, fileName.length - 4)}`];
+    this.posterUrl = this.getImageUrl(baseApiMovieModel.Poster);
     this._decade = this.setDecade(this.year);
   }
 
@@ -28,5 +27,11 @@ export class BaseUiMovieModel {
     if (decade && decade !== NaN) {
       return decade;
     }
+  }
+
+  /** Get local image url */
+  private getImageUrl(val: string) {
+    const fileName = val.substring(URL_TO_STRIP.length);
+    return images[`${fileName.substring(0, fileName.length - 4)}`];
   }
 }

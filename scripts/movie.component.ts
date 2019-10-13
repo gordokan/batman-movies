@@ -1,6 +1,5 @@
 import { getMovieById } from "./request.service";
 import { VerboseUiMovieModel } from "./models/ui-movie.model";
-// import images from "../content/images/*"; // https://github.com/parcel-bundler/parcel/issues/317
 
 class MovieController {
   public static readonly $inject = ["$scope", "$window"];
@@ -11,13 +10,10 @@ class MovieController {
     this.$scope = $scope;
     this.$window = $window;
   }
-  public $onInit() {
-    // TODO show a loading icon?
-  }
+  public $onInit() {}
 
   public $onChanges(changes) {
     if (changes && changes.movieId && changes.movieId.currentValue) {
-      // TODO complete this check
       getMovieById(changes.movieId.currentValue).then(movie => {
         this.$scope.$applyAsync(() => (this.movieData = movie));
       });
