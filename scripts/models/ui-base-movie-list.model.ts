@@ -18,6 +18,11 @@ export class BaseUiMovieModel {
   }
 
   private setDecade(val: string) {
+    if (val.includes("–")) {
+      // 1992–1995 edge case
+      val = val.split("–")[0];
+    }
+
     let decade = parseInt(`${val.slice(0, val.length - 1)}0`);
 
     if (decade && decade !== NaN) {
