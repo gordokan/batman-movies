@@ -46,7 +46,7 @@ export const movieComponent = {
           <div class="movie__released">{{$ctrl.movieData.released}}</div>
         </div>
         <div class="movie__plot">{{$ctrl.movieData.plot}}</div>
-        <button class="movie__external-button"ng-click="$ctrl.openLink($ctrl.movieData.externalLink)">View on IMDB</button>
+        <button class="movie__external-button btn" ng-click="$ctrl.openLink($ctrl.movieData.externalLink)">View on IMDB</button>
       </div>
     </div>
   `

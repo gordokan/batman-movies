@@ -1,4 +1,4 @@
-export interface FilterOption {
+export interface IFilterOption {
   display: string;
   value: number;
 }

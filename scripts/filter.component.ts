@@ -1,6 +1,6 @@
-import { FilterOption } from "./models/filter-options.model";
+import { IFilterOption } from "./models/filter-options.model";
 
-const filterOptions: FilterOption[] = [
+const filterOptions: IFilterOption[] = [
   {
     display: "2010's",
     value: 2010
@@ -22,8 +22,10 @@ const filterOptions: FilterOption[] = [
 class FilterController {
   public onUpdated: ({ $event: { filterVal: number } }) => void;
   public filterOptions = filterOptions;
+  public selectedFilterVal: number;
 
   public updateFilter(filterVal: number) {
+    this.selectedFilterVal = filterVal;
     if (this.onUpdated) {
       this.onUpdated({ $event: { filterVal } });
     }
@@ -36,8 +38,13 @@ export const filterComponent = {
   },
   controller: FilterController,
   template: `
-    <div ng-repeat="option in $ctrl.filterOptions">
-      <span ng-click="$ctrl.updateFilter(option.value)">{{option.display}}</span>
+    <div class="filter-container">
+      <button ng-repeat="option in $ctrl.filterOptions"
+            ng-class="{'filter--active': $ctrl.selectedFilterVal === option.value}"
+            class="filter btn"
+            ng-click="$ctrl.updateFilter(option.value)">
+        {{option.display}}
+      </button>
     </div>
   `
 };
